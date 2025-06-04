@@ -64,22 +64,30 @@ function scroll(){
       }, 100);
     });
   },[])
+  // handle
+
   
-  function handle(){
+function handle() {
+  if (!value.trim()) return;
+
+  console.log("Sending message:", value);
+
+  const chatPostRef = push(chatListRef);
+  set(chatPostRef, {
+    name: name,
+    message: value
+  }).then(() => {
+    console.log("Message sent");
+    setvalue('');
+  }).catch((error) => {
+    console.error("Error sending message:", error);
+  });
+}
 
 
-    // Create a new post reference with an auto-generated id
-   
-    const chatPostRef = push(chatListRef);
-    set(chatPostRef, {
-      name,message:value
-    });
 
-    //const c = [...chat];
-     // c.push({name,message:value})
-     // setchat(c);
-      setvalue('')
-  }
+
+  
   
   return (
   
