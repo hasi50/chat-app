@@ -40,8 +40,8 @@ const googlelogin = () =>{
 
 
   const [name,setname] = useState('')
-  const [chat,setchat] = useState([{name:'Hassan',message:"you are good"},
-    {name:'1',message:"you are awsesome"}
+  const [chat,setchat] = useState([{name:'Hassan',message:"Hello"},
+    {name:'Haseeb',message:"Hy"}
   ])
   const [value,setvalue] = useState('')
 
